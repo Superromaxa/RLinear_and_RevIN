@@ -1,0 +1,27 @@
+RTSF commit: 0fec00104f754f4fbf795b9b4da5fa2459b32e76
+ETTh1 commit: 11ab373cf9c9f5be7698e219a5a170e1b1c8a930
+macOS-26.2-arm64-arm-64bit
+3.11.12
+torch==2.5.1, numpy==1.26.4, pandas==2.2.3, scikit-learn==1.5.2, matplotlib==3.9.2, einops==0.8.0
+Command: /tmp/rtsf.VDsnfv/env/bin/python -u /tmp/rtsf.VDsnfv/verify/runs/original.J8qsqZ/RTSF-0fec00104f754f4fbf795b9b4da5fa2459b32e76/run.py --is_training 1 --data_path ETTh1.csv --data ETTh1 --features M --channel 7 --itr 1 --batch_size 128 --learning_rate 0.005 --model Linear --rev --seq_len 336 --pred_len 96 --gpu 3
+Matplotlib is building the font cache; this may take a moment.
+Args in experiment:
+Namespace(is_training=1, model='Linear', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, pred_len=96, individual=False, seg=20, channel=7, d_model=512, layers=2, embed='timeF', do_predict=False, rev=True, drop=0.1, num_workers=10, itr=1, train_epochs=15, batch_size=128, patience=10, learning_rate=0.005, lradj='type1', use_amp=False, use_gpu=False, gpu=3, use_multi_gpu=False, devices='0,1,2,3')
+Use CPU
+Traceback (most recent call last):
+  File "/tmp/rtsf.VDsnfv/verify/runs/original.J8qsqZ/RTSF-0fec00104f754f4fbf795b9b4da5fa2459b32e76/run.py", line 90, in <module>
+    exp = Exp(args)  # set experiments
+          ^^^^^^^^^
+  File "/private/tmp/rtsf.VDsnfv/verify/runs/original.J8qsqZ/RTSF-0fec00104f754f4fbf795b9b4da5fa2459b32e76/exp/exp_main.py", line 18, in __init__
+    super(Exp_Main, self).__init__(args)
+  File "/private/tmp/rtsf.VDsnfv/verify/runs/original.J8qsqZ/RTSF-0fec00104f754f4fbf795b9b4da5fa2459b32e76/exp/exp_basic.py", line 8, in __init__
+    self.model = self._build_model().to(self.device)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/rtsf.VDsnfv/verify/runs/original.J8qsqZ/RTSF-0fec00104f754f4fbf795b9b4da5fa2459b32e76/exp/exp_main.py", line 26, in _build_model
+    model = model_dict[self.args.model].Model(self.args).float()
+            ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'Linear'
+real 15.99
+user 15.13
+sys 0.78
+Exit status: 1
